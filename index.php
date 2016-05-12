@@ -1,5 +1,6 @@
 <?php
 
+//for debugging
 $debug = 0;
 
     function DBCON($query) {
@@ -41,8 +42,11 @@ $debug = 0;
                                 AND GTI.local_graph_id>0
                                 AND DID.value = '$username'"));
 
-        echo "Graph ID: ".$graphid['Gid']."\n";
-        echo "<br />";
+        if ($debug == 1) {
+            echo "Graph ID: ".$graphid['Gid']."\n";
+            echo "<br />";
+        }
+
 
         $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
         echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
@@ -59,10 +63,12 @@ $debug = 0;
 
     //echo "<body background=\"http://kurumsal.turk.net/images/logo@2x.png\">";
 
-    var_dump($_REQUEST);
-    echo "<br />";
-    echo "Commands: ".$_REQUEST['cmd']." ".$_REQUEST['username']."\n";
-    echo "<br />";
+    if ($debug == 1) {
+        var_dump($_REQUEST);
+        echo "<br />";
+        echo "Commands: ".$_REQUEST['cmd']." ".$_REQUEST['username']."\n";
+        echo "<br />";
+    }
 
     if(isset($_REQUEST['cmd'])) {
         if ( $_REQUEST['cmd'] = 'getgraph' ) {
