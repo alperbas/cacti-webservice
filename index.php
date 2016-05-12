@@ -47,7 +47,6 @@ $debug = 0;
             echo "<br />";
         }
 
-
         $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
         echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         $file = "../export/graphs/graph_".$graphid['Gid']."_1.png";
@@ -72,7 +71,7 @@ $debug = 0;
 
     if(isset($_REQUEST['cmd'])) {
         if ( $_REQUEST['cmd'] = 'getgraph' ) {
-            if(isset($_REQUEST['username'])) {
+            if(strlen($_REQUEST['username']) > '0' ) {
                 GETGRAPH($_REQUEST['username']);
             } else {
                 echo "enter username";
