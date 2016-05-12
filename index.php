@@ -31,6 +31,8 @@ $debug = 0;
 
     function GETGRAPH($username) {
 
+        global $debug;
+
         $graphid = mysqli_fetch_assoc(DBCON("SELECT DISTINCT(GTG.local_graph_id) AS Gid, GTG.title, GTG.title_cache, DTD.local_data_id AS Did, DTD.name, DTD.name_cache, DTD.data_source_path, DID.value AS username
                                 FROM (data_template_data DTD, data_template_rrd DTR, graph_templates_item GTI, graph_templates_graph GTG, data_input_data DID)
                                 WHERE GTI.task_item_id=DTR.id
