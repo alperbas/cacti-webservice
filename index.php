@@ -12,11 +12,6 @@ $debug = 0;
         $database_password = "password";
         $database_default = "database";
 
-        $database_username = "cacticustomer";
-        $database_password = "xu3l9*kt";
-        $database_hostname = "localhost";
-        $database_default = "cacti";
-
         if(is_file(dirname(__FILE__) . "/db_info.php"))
             include dirname(__FILE__) . "/db_info.php";
         // Connect and execute query to DB
@@ -50,15 +45,15 @@ $debug = 0;
         echo "<br />";
 
         $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"bla bla\" ></div>";
+        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         $file = "../export/graphs/graph_".$graphid['Gid']."_1.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"bla bla\" ></div>";
+        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         $file = "../export/graphs/graph_".$graphid['Gid']."_2.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"bla bla\" ></div>";
+        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         $file = "../export/graphs/graph_".$graphid['Gid']."_3.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"bla bla\" ></div>";
+        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         $file = "../export/graphs/graph_".$graphid['Gid']."_4.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"bla bla\" ></div>";
+        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
 
     }
 
