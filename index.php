@@ -7,12 +7,12 @@ $debug = 0;
 
         global $debug;
         // Connect and execute query to DB
-        ## enter db info here or create vars.php
+        ## enter db info here or create db_info.php
         $database_hostname = "hostname";
         $database_username = "username";
         $database_password = "password";
         $database_default = "database";
-
+        // include db information
         if(is_file(dirname(__FILE__) . "/db_info.php"))
             include dirname(__FILE__) . "/db_info.php";
         // Connect and execute query to DB
