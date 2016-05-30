@@ -49,17 +49,20 @@ $debug = 0;
             echo "<br />";
         }
 
-        $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-        $file = "../export/graphs/graph_".$graphid['Gid']."_1.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-        $file = "../export/graphs/graph_".$graphid['Gid']."_2.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-        $file = "../export/graphs/graph_".$graphid['Gid']."_3.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-        $file = "../export/graphs/graph_".$graphid['Gid']."_4.png";
-        echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-
+        if (sizeof($graphid) > 0) {
+            $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
+            echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
+            $file = "../export/graphs/graph_".$graphid['Gid']."_1.png";
+            echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
+            $file = "../export/graphs/graph_".$graphid['Gid']."_2.png";
+            echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
+            $file = "../export/graphs/graph_".$graphid['Gid']."_3.png";
+            echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
+            $file = "../export/graphs/graph_".$graphid['Gid']."_4.png";
+            echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
+        } else {
+            echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
+        }
     }
 
     //echo "<body background=\"http://kurumsal.turk.net/images/logo@2x.png\">";
