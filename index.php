@@ -62,7 +62,6 @@ $debug = 0;
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         } else {
             echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
-            return 0;
         }
     }
 
