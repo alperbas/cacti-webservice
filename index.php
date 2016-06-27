@@ -78,7 +78,7 @@ $debug = 0;
         echo "<br />";
     }
 
-    if(!isset($_REQUEST) {
+    if(!isset($_REQUEST)) {
         echo "<h3><center>No direct access!</center></3>";
     } else {
         if(isset($_REQUEST['cmd'])) {
