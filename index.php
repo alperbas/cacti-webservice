@@ -62,6 +62,7 @@ $debug = 0;
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         } else {
             echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
+            sleep(1);
             TOOLDGRAPH();
         }
     }
@@ -70,7 +71,11 @@ $debug = 0;
 
         global $oldgraphid;
 
-        header("Location: http://graph/trafikV2.asp?GRAPHID=$oldgraphid");
+        if(strlen($oldgraphid) > '0' ) {
+            header("Location: http://graph/trafikV2.asp?GRAPHID=$oldgraphid");
+        } else {
+            echo "<h3><center>$username hizmeti için graph'ta tanımlı bir grafik yok.</center></3>";
+        }
 
     }
 
