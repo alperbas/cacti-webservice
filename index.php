@@ -62,6 +62,7 @@ $debug = 0;
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         } else {
             echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
+            return 0;
         }
     }
 
@@ -74,22 +75,22 @@ $debug = 0;
     if ($debug == 1) {
         var_dump($_REQUEST);
         echo "<br />";
-        echo "Commands: ".$_REQUEST['cmd']." ".$_REQUEST['username']."\n";
+        echo "Commands: "
+        foreach($_REQUEST as $cmd) {
+            echo "$cmd "
+        }
         echo "<br />";
     }
 
-    if(count($_REQUEST) > 1) {
+    if(count($_REQUEST) < 1) {
         echo "<h3><center>No direct access!</center></3>";
     } else {
-        if(isset($_REQUEST['cmd'])) {
+        if(isset($_REQUEST['cmd']))
             $command = $_REQUEST['cmd'];
-        }
-        if(isset($_REQUEST['username'])) {
+        if(isset($_REQUEST['username']))
             $username = $_REQUEST['username'];
-        }
-        if(isset($_REQUEST['graphid'])) {
+        if(isset($_REQUEST['graphid']))
             $graphid = $_REQUEST['graphid'];
-        }
 
         if ($command = 'getgraph') {
             if(strlen($username) > '0' ) {
