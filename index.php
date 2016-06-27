@@ -81,7 +81,6 @@ $debug = 0;
         echo "<br />";
         echo "Commands: ";
         foreach($_REQUEST as $cmd) {
-            echo "$cmd "
             echo "$cmd ";
         }
         echo "<br />";
