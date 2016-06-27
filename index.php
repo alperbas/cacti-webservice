@@ -53,19 +53,19 @@ $debug = 0;
             echo "<h3><center>$username</center></3>";
             $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-            echo "<center>Hourly</center>"
+            echo "<center>Hourly</center>";
             $file = "../export/graphs/graph_".$graphid['Gid']."_1.png";
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-            echo "<center>Daily</center>"
+            echo "<center>Daily</center>";
             $file = "../export/graphs/graph_".$graphid['Gid']."_2.png";
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-            echo "<center>Weekly</center>"
+            echo "<center>Weekly</center>";
             $file = "../export/graphs/graph_".$graphid['Gid']."_3.png";
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-            echo "<center>Monthly</center>"
+            echo "<center>Monthly</center>";
             $file = "../export/graphs/graph_".$graphid['Gid']."_4.png";
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
-            echo "<center>Yearly</center>"
+            echo "<center>Yearly</center>";
         } else {
             if ($debug == 1) {
                 echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
