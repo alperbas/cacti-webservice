@@ -62,7 +62,12 @@ $debug = 0;
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
         } else {
             echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
+            return 0;
         }
+    }
+
+    function TOOLDGRAPH($graphid) {
+        header("Location: http://graph/trafikV2.asp?GRAPHID=$graphid");
     }
 
     //echo "<body background=\"http://kurumsal.turk.net/images/logo@2x.png\">";
@@ -70,16 +75,28 @@ $debug = 0;
     if ($debug == 1) {
         var_dump($_REQUEST);
         echo "<br />";
-        echo "Commands: ".$_REQUEST['cmd']." ".$_REQUEST['username']."\n";
+        echo "Commands: "
+        foreach($_REQUEST as $cmd) {
+            echo "$cmd "
+        }
         echo "<br />";
     }
 
-    if(isset($_REQUEST['cmd'])) {
-        if ( $_REQUEST['cmd'] = 'getgraph' ) {
-            if(strlen($_REQUEST['username']) > '0' ) {
-                GETGRAPH($_REQUEST['username']);
+    if(count($_REQUEST) < 1) {
+        echo "<h3><center>No direct access!</center></3>";
+    } else {
+        if(isset($_REQUEST['cmd']))
+            $command = $_REQUEST['cmd'];
+        if(isset($_REQUEST['username']))
+            $username = $_REQUEST['username'];
+        if(isset($_REQUEST['graphid']))
+            $graphid = $_REQUEST['graphid'];
+
+        if ($command = 'getgraph') {
+            if(strlen($username) > '0' ) {
+                GETGRAPH($username);
             } else {
-                echo "enter username";
+                echo "Please specify username";
             }
         }
     }
