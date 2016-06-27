@@ -70,14 +70,13 @@ $debug = 0;
             if ($debug == 1) {
                 echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
             }
-            TOOLDGRAPH();
+            TOOLDGRAPH($username);
         }
     }
 
-    function TOOLDGRAPH() {
+    function TOOLDGRAPH($username) {
 
         global $oldgraphid;
-        global $username;
 
         if(strlen($oldgraphid) > '0' ) {
             header("Location: http://graph/trafikV2.asp?GRAPHID=$oldgraphid");
