@@ -78,12 +78,24 @@ $debug = 0;
         echo "<br />";
     }
 
-    if(isset($_REQUEST['cmd'])) {
-        if ( $_REQUEST['cmd'] = 'getgraph' ) {
-            if(strlen($_REQUEST['username']) > '0' ) {
-                GETGRAPH($_REQUEST['username']);
+    if(!isset($_REQUEST) {
+        echo "<h3><center>No direct access!</center></3>";
+    } else {
+        if(isset($_REQUEST['cmd'])) {
+            $command = $_REQUEST['cmd'];
+        }
+        if(isset($_REQUEST['username'])) {
+            $username = $_REQUEST['username'];
+        }
+        if(isset($_REQUEST['graphid'])) {
+            $graphid = $_REQUEST['graphid'];
+        }
+
+        if ($command = 'getgraph') {
+            if(strlen($username) > '0' ) {
+                GETGRAPH($username);
             } else {
-                echo "enter username";
+                echo "Please specify username";
             }
         }
     }
