@@ -93,8 +93,8 @@ $debug = 0;
             $command = $_REQUEST['cmd'];
         if(isset($_REQUEST['username']))
             $username = $_REQUEST['username'];
-        if(isset($_REQUEST['graphid']))
-            $graphid = $_REQUEST['graphid'];
+        if(isset($_REQUEST['oldgraphid']))
+            $oldgraphid = $_REQUEST['oldgraphid'];
 
         if ($command = 'getgraph') {
             if(strlen($username) > '0' ) {
