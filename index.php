@@ -79,9 +79,10 @@ $debug = 0;
     if ($debug == 1) {
         var_dump($_REQUEST);
         echo "<br />";
-        echo "Commands: "
+        echo "Commands: ";
         foreach($_REQUEST as $cmd) {
             echo "$cmd "
+            echo "$cmd ";
         }
         echo "<br />";
     }
