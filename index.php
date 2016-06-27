@@ -66,8 +66,12 @@ $debug = 0;
         }
     }
 
-    function TOOLDGRAPH($graphid) {
-        header("Location: http://graph/trafikV2.asp?GRAPHID=$graphid");
+    function TOOLDGRAPH() {
+
+        global $oldgraphid;
+
+        header("Location: http://graph/trafikV2.asp?GRAPHID=$oldgraphid");
+
     }
 
     //echo "<body background=\"http://kurumsal.turk.net/images/logo@2x.png\">";
