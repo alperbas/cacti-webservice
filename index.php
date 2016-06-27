@@ -50,7 +50,8 @@ $debug = 0;
         }
 
         if (sizeof($graphid) > 0) {
-            echo "<h3><center>$username</center></3>";
+            echo "<h3><center>$username</center></h3>";
+            echo "<br />";
             $file = "../export/graphs/graph_".$graphid['Gid']."_5.png";
             echo "<div align=center><img src=\"".$file."\" alt=\"".$username."\" ></div>";
             echo "<center>Hourly</center>";
@@ -68,7 +69,7 @@ $debug = 0;
             echo "<center>Yearly</center>";
         } else {
             if ($debug == 1) {
-                echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></3>";
+                echo "<h3><center>$username hizmeti için Cacti'de tanımlı bir grafik yok.</center></h3>";
             }
             TOOLDGRAPH($username);
         }
@@ -81,7 +82,7 @@ $debug = 0;
         if(strlen($oldgraphid) > '0' ) {
             header("Location: http://graph/trafikV2.asp?GRAPHID=$oldgraphid");
         } else {
-            echo "<h3><center>$username hizmeti için graph'ta tanımlı bir grafik yok.</center></3>";
+            echo "<h3><center>$username hizmeti için graph'ta tanımlı bir grafik yok.</center></h3>";
         }
 
     }
